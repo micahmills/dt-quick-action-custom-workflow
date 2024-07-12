@@ -25,6 +25,11 @@ class Disciple_Tools_Plugin_Starter_Template_Workflows {
         'label' => 'Add To Quick Action Field Value'
     ];
 
+    private static $custom_action_echo_link = [
+        'id'    => 'contacts_00001_custom_action_echo_link',
+        'label' => 'Get Echo ID and create link to ge.echoglobal.org'
+    ];
+
     /**
      * Main Disciple_Tools_Plugin_Starter_Template_Workflows Instance
      *
@@ -61,6 +66,23 @@ class Disciple_Tools_Plugin_Starter_Template_Workflows {
             $this,
             'custom_action_custom_action_quick_action_update'
         ], 10, 3 );
+
+
+
+        add_filter( 'dt_workflows_custom_actions', function ( $actions ) {
+            $actions[] = (object) [
+                'id'        => self::$custom_action_echo_link['id'],
+                'name'      => self::$custom_action_echo_link['label'],
+                'displayed' => true // Within admin workflow builder view?
+            ];
+
+            return $actions;
+        }, 10, 1 );
+
+        add_action( self::$custom_action_echo_link['id'], [
+            $this,
+            'custom_action_echo_link'
+        ], 10, 3 );
     }
 
     public function custom_action_custom_action_quick_action_update( $post, $field, $value ) {
@@ -70,6 +92,21 @@ class Disciple_Tools_Plugin_Starter_Template_Workflows {
             $new_value = ++$current_value;
 
             update_post_meta( $post['ID'], $field, $new_value );
+        }
+    }
+
+    public function custom_action_echo_link( $post, $field, $value ) {
+        // Ensure post is a valid groups type
+        if ( ! empty( $post ) && ( $post['post_type'] === 'contacts' ) ) {
+            $ids = $post['dt_echo_convo_ids'];
+            $links = [];
+            $echoLinkRoot = get_option( 'dt_echo_api_host' );
+
+            foreach ($ids as $id) {
+                $links[] = ["type" => "default", "value"=>"https://{$echoLinkRoot}/report/reviews/#/conversations/{$id}"];
+            }
+
+            update_post_meta( $post['ID'], $field, $links );
         }
     }
 
