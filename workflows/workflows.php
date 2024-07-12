@@ -100,10 +100,10 @@ class Disciple_Tools_Plugin_Starter_Template_Workflows {
         if ( ! empty( $post ) && ( $post['post_type'] === 'contacts' ) ) {
             $ids = $post['dt_echo_convo_ids'];
             $links = [];
-            $echoLinkRoot = get_option( 'dt_echo_api_host' );
+            $echo_link_root = get_option( 'dt_echo_api_host' );
 
-            foreach ($ids as $id) {
-                $links[] = ["type" => "default", "value"=>"https://{$echoLinkRoot}/report/reviews/#/conversations/{$id}"];
+            foreach ( $ids as $id ) {
+                $links[] = ['type' => 'default', 'value' =>"https://{$echo_link_root}/report/reviews/#/conversations/{$id}"];
             }
 
             update_post_meta( $post['ID'], $field, $links );
