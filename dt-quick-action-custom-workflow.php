@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: Disciple.Tools - Quick Action Custom Workflow
- * Plugin URI: https://github.com/DiscipleTools/disciple-tools-quick-action-custom-workflow
+ * Plugin URI: https://github.com/micahmills/dt-quick-action-custom-workflow
  * Description: Allows a Custom Action to update a Quick action based on a field value in Workflow Builder.
  * Text Domain: disciple-tools-quick-action-custom-workflow
  * Domain Path: /languages
  * Version:  0.1
- * Author URI: https://github.com/DiscipleTools
- * GitHub Plugin URI: https://github.com/DiscipleTools/disciple-tools-quick-action-custom-workflow
+ * Author URI: https://github.com/micahmills
+ * GitHub Plugin URI: https://github.com/micahmills/dt-quick-action-custom-workflow
  * Requires at least: 4.7.0
  * (Requires 4.7+ because of the integration of the REST API at 4.7 and the security requirements of this milestone version.)
  * Tested up to: 5.6
