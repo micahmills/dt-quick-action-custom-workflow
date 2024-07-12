@@ -20,6 +20,11 @@ class Disciple_Tools_Plugin_Starter_Template_Workflows {
      */
     private static $_instance = null;
 
+    private static $custom_action_custom_action_quick_action_update = [
+        'id'    => 'contacts_00001_custom_action_quick_action_update',
+        'label' => 'Iterate Quick Action Field Value'
+    ];
+
     /**
      * Main Disciple_Tools_Plugin_Starter_Template_Workflows Instance
      *
@@ -41,6 +46,31 @@ class Disciple_Tools_Plugin_Starter_Template_Workflows {
      */
     public function __construct() {
         add_filter( 'dt_workflows', [ $this, 'fetch_default_workflows_filter' ], 10, 2 );
+
+        add_filter( 'dt_workflows_custom_actions', function ( $actions ) {
+            $actions[] = (object) [
+                'id'        => self::$custom_action_custom_action_quick_action_update['id'],
+                'name'      => self::$custom_action_custom_action_quick_action_update['label'],
+                'displayed' => true // Within admin workflow builder view?
+            ];
+
+            return $actions;
+        }, 10, 1 );
+
+        add_action( self::$custom_action_custom_action_quick_action_update['id'], [
+            $this,
+            'custom_action_custom_action_quick_action_update'
+        ], 10, 3 );
+    }
+
+    public function custom_action_custom_action_quick_action_update( $post, $field, $value ) {
+        // Ensure post is a valid groups type
+        if ( ! empty( $post ) && ( $post['post_type'] === 'contacts' ) ) {
+            $current_value = $post[$field] ?? 0;
+            $new_value = ++$current_value;
+
+            update_post_meta( $post['ID'], $field, $new_value );
+        }
     }
 
     public function fetch_default_workflows_filter( $workflows, $post_type ) {
