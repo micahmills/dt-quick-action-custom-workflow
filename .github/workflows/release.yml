@@ -23,7 +23,7 @@ jobs:
       - name: Build project
         run: |
           mkdir dt-quick-action-custom-workflow
-          cp -r dt-quick-action-custom-workflow.php admin charts languages magic-link post-type rest-api site-link tile workflows spinner.svg version-control.json LICENSE SECURITY.md dt-quick-action-custom-workflow/
+          cp -r dt-quick-action-custom-workflow.php workflows spinner.svg version-control.json LICENSE SECURITY.md dt-quick-action-custom-workflow/
           zip -r dt-quick-action-custom-workflow.zip dt-quick-action-custom-workflow
       - name: Create Release
         id: create_release
