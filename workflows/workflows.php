@@ -27,7 +27,7 @@ class Disciple_Tools_Plugin_Starter_Template_Workflows {
 
     private static $custom_action_echo_link = [
         'id'    => 'contacts_00001_custom_action_echo_link',
-        'label' => 'Get Echo ID and create link to ge.echoglobal.org'
+        'label' => 'Get Echo ID and create link to echoglobal.org'
     ];
 
     /**
