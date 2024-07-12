@@ -22,7 +22,7 @@ class Disciple_Tools_Plugin_Starter_Template_Workflows {
 
     private static $custom_action_custom_action_quick_action_update = [
         'id'    => 'contacts_00001_custom_action_quick_action_update',
-        'label' => 'Iterate Quick Action Field Value'
+        'label' => 'Add To Quick Action Field Value'
     ];
 
     /**

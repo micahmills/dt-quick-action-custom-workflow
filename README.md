@@ -1,40 +1,30 @@
-![Build Status](https://github.com/DiscipleTools/disciple-tools-plugin-starter-template/actions/workflows/ci.yml/badge.svg?branch=master)
-## Dev notes, delete me:
-This is a starter plugin to jumpstart your work with Disciple.Tools.
-Click the "Use this template" button above.
-See instructions for refactoring and getting started in the [wiki](https://github.com/DiscipleTools/disciple-tools-plugin-starter-template/wiki)
-See instructions for creating releases and publishing your plugin: [wiki](https://github.com/DiscipleTools/disciple-tools-plugin-starter-template/wiki)
-In order to display the banner correctly on the Disciple.Tools Community Plugins Site, don't change the 'Plugin Banner' text on line 12; only the URL.
-
+![Build Status](https://github.com/DiscipleTools/dt-quick-action-custom-workflow/actions/workflows/ci.yml/badge.svg?branch=master)
 ## readme format:
 
-![Plugin Banner](https://raw.githubusercontent.com/DiscipleTools/disciple-tools-plugin-starter-template/master/documentation/banner.png)
+![Plugin Banner](https://raw.githubusercontent.com/DiscipleTools/dt-quick-action-custom-workflow/master/documentation/banner.png)
 
-# Disciple.Tools - Plugin Starter Template
+# Disciple.Tools - Quick Action Custom Workflow
+This Plugin allows you to create custom workflows for quick actions in Disciple.Tools.
 
-Description Description Description Description Description Description Description
-Description Description Description Description Description Description Description
 
 ## Purpose
 
-Purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose
-Purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose
-
-Purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose
-Purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose
+You can now augment the value of a quick action field based on the value of another field. This is helpful if you want to count meetings or other activities based in a magic link where the quick action button is not available.
 
 ## Usage
 
+To Use this plugin you must have the Disciple.Tools Theme installed on a Wordpress Server. You can then create a custom field or use an existing field to trigger the quick action in a workflow. Create a new workflow where Step 1 is looking for a field updated, Step 2: select he field you want to watch and the value you want to watch for. Step 3: Select your quick action field (ie. Meeting Scheduled) and from action select 'Custom Action', from the value drop down select 'Add To Quick Action Field Value.' Step 4 give you workflow a name and save it.
+
+Now when the field you selected in step 2 is updated to the value you selected, the quick action field will be updated with the value you selected in step 3.
+
 #### Will Do
 
-- Item
-- Item
-- Item
+- Update a value in a quick action field based on the value of another field.
 
 #### Will Not Do
 
-- Item
-- Item
+- Create a new quick action field.
+- Create a new field to watch for changes.
 
 ## Requirements
 
@@ -44,17 +34,3 @@ Purpose purpose purpose purpose purpose purpose purpose purpose purpose purpose 
 
 - Install as a standard Disciple.Tools/Wordpress plugin in the system Admin/Plugins area.
 - Requires the user role of Administrator.
-
-## Contribution
-
-Contributions welcome. You can report issues and bugs in the
-[Issues](https://github.com/DiscipleTools/disciple-tools-plugin-starter-template/issues) section of the repo. You can present ideas
-in the [Discussions](https://github.com/DiscipleTools/disciple-tools-plugin-starter-template/discussions) section of the repo. And
-code contributions are welcome using the [Pull Request](https://github.com/DiscipleTools/disciple-tools-plugin-starter-template/pulls)
-system for git. For a more details on contribution see the
-[contribution guidelines](https://github.com/DiscipleTools/disciple-tools-plugin-starter-template/blob/master/CONTRIBUTING.md).
-
-
-## Screenshots
-
-![screenshot](documentation/community/starter-banners/banner-blue-green.png)
