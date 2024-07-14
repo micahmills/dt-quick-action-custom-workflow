@@ -5,7 +5,7 @@
  * Description: Allows a Custom Action to update a Quick action based on a field value in Workflow Builder.
  * Text Domain: disciple-tools-quick-action-custom-workflow
  * Domain Path: /languages
- * Version:  0.5.2
+ * Version:  0.5.3
  * Author URI: https://github.com/micahmills
  * GitHub Plugin URI: https://github.com/micahmills/dt-quick-action-custom-workflow
  * Requires at least: 4.7.0
