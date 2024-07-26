@@ -103,7 +103,7 @@ class Disciple_Tools_Plugin_Starter_Template_Workflows {
             $echo_link_root = get_option( 'dt_echo_api_host' );
 
             foreach ( $ids as $id ) {
-                $links[] = ['type' => 'default', 'value' =>"https://{$echo_link_root}/report/reviews/#/conversations/{$id}"];
+                $links[] = ['type' => 'default', 'value' =>"https://{$echo_link_root}report/reviews/#/conversations/{$id}"];
             }
 
             update_post_meta( $post['ID'], $field, $links );
